@@ -1,0 +1,57 @@
+@use "../../core/mixins/media" as *;
+@use "../../../scss/config/theme" as *;
+
+.form-field {
+  position: relative;
+  display: block;
+  width: 100%;
+  --field-input-color: #333;
+
+  &__input {
+    color: var(--field-input-color);
+    width: 100%;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0 9px;
+    line-height: 1.5;
+    font-weight: 400;
+    background-color: #fff;
+    font-size: 16px;
+
+    &::placeholder {
+      opacity: 0.5;
+    }
+
+    &:focus + .form-field__label {
+      opacity: 0.6;
+    }
+
+    @include media(sm) {
+      font-size: 20px;
+    }
+
+    @include media(hg) {
+      font-size: 24px;
+      //padding: 20px 0 9px;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    font-size: 16px;
+    line-height: 1;
+    transition: 0.3s;
+
+    @include media(md) {
+      font-size: 16px;
+    }
+
+    @include media(hg) {
+      font-size: 16px;
+    }
+  }
+}

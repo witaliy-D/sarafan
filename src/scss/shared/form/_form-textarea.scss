@@ -1,0 +1,33 @@
+@use "../../core/mixins/media" as *;
+@use "../../../scss/config/theme" as *;
+
+.form-textarea {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  line-height: 20px;
+  --field-input-color: #404040;
+
+  &__input {
+    color: var(--field-input-color);
+    width: 100%;
+    display: block;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 13px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    background-color: rgb(255, 255, 255);
+    height: 100px;
+    resize: none;
+
+    &::placeholder {
+      opacity: 0.5;
+    }
+
+    @include media(xl) {
+      font-size: 18px;
+    }
+  }
+}

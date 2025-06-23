@@ -1,0 +1,143 @@
+@use "../../scss/core/mixins/media" as *;
+@use "../../scss/config/core" as *;
+@use "../../scss/config/theme" as *;
+
+.footer {
+  margin-top: auto;
+  flex-shrink: 0;
+  box-shadow: 0px 1px 44px 0px rgba(0, 0, 0, 0.12);
+  color: #151516;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 20px;
+    row-gap: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    @include media(md) {
+      row-gap: 40px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__logo {
+    img {
+      width: 170px;
+      height: 147px;
+    }
+  }
+
+  &__menu-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+
+    @include media(md) {
+      row-gap: 32px;
+      grid-template-columns: auto auto auto auto;
+      justify-content: space-between;
+      order: 4;
+    }
+
+    @include media(hg) {
+      width: 50%;
+      order: 2;
+    }
+  }
+
+  &__menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include media(md) {
+      gap: 32px;
+    }
+
+    &:nth-child(3) {
+      @include media(md) {
+        order: -1;
+      }
+    }
+
+    li {
+      a {
+        display: inline-block;
+        font-size: 16px;
+        line-height: 20px;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+    width: 100%;
+
+    @include media(sm) {
+      width: calc(50% - 10px);
+    }
+
+    @include media(md) {
+      width: auto;
+      min-width: 268px;
+      align-self: flex-end;
+    }
+
+    @include media(hg) {
+      order: 3;
+      align-self: flex-start;
+    }
+
+    .search {
+      width: 100%;
+      max-width: 268px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    line-height: 17px;
+
+    @include media(sm) {
+      width: calc(50% - 10px);
+    }
+
+    @include media(md) {
+      width: auto;
+      margin-right: auto;
+      align-self: flex-end;
+    }
+
+    @include media(lg) {
+      padding-left: 30px;
+    }
+
+    @include media(hg) {
+      padding-left: 0;
+      align-self: flex-start;
+      margin-right: 0;
+      order: 4;
+    }
+  }
+
+  &__contacts-address {
+    margin-bottom: 0;
+  }
+}

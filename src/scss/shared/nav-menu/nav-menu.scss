@@ -1,0 +1,246 @@
+@use "../../core/mixins/media" as *;
+@use "../../../scss/config/theme" as *;
+
+.nav-menu {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: auto;
+  max-height: 0;
+  z-index: 948;
+  transition: max-height 0.3s;
+  overflow: hidden;
+  color: #151516;
+
+  &.nav-menu--open {
+    max-height: 100vh;
+  }
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    padding-top: 209px;
+
+    @include media(sm) {
+      padding-top: 172px;
+    }
+
+    @include media(md) {
+      padding-top: 100px;
+    }
+  }
+
+  &__box {
+    background-color: #fff;
+    padding-bottom: 40px;
+    box-shadow: 0px 4px 26px 0px rgba(0, 0, 0, 0.09);
+  }
+
+  &__content {
+    display: flex;
+    gap: 20px;
+
+    @include media(xs) {
+      gap: 50px;
+    }
+
+    @include media(xl) {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 30px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 30px 16px 30px 0;
+    list-style: none;
+    border-right: 1px solid #c4c4c4;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include media(xs) {
+      padding-right: 30px;
+    }
+
+    @include media(md) {
+      padding-right: 50px;
+    }
+
+    @include media(lg) {
+      padding-right: 70px;
+    }
+
+    @include media(xl) {
+      padding-right: 0;
+      border: none;
+    }
+
+    li {
+      a {
+        display: inline-block;
+        font-size: 20px;
+        line-height: 24px;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    @include media(md) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 20px;
+    }
+
+    @include media(xl) {
+      grid-template-columns: repeat(11, 1fr);
+      column-gap: 30px;
+      border-left: 1px solid #c4c4c4;
+      grid-column: span 11;
+    }
+  }
+
+  &__item {
+    @include media(xl) {
+      grid-column: span 2;
+    }
+
+  }
+
+  &__item-shop {
+    @include media(md) {
+      grid-column: span 3;
+
+      .nav-menu__item-list {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 30px;
+
+        li {
+          &:nth-child(2) {
+            order: 3;
+          }
+
+          &:nth-child(3) {
+            order: 5;
+          }
+
+          &:nth-child(4) {
+            order: 7;
+          }
+
+          &:nth-child(5) {
+            order: 9;
+          }
+
+          &:nth-child(6) {
+            order: 11;
+          }
+
+          &:nth-child(7) {
+            order: 13;
+          }
+
+          &:nth-child(8) {
+            order: 15;
+          }
+
+          &:nth-child(9) {
+            order: 2;
+          }
+
+          &:nth-child(10) {
+            order: 4;
+          }
+
+          &:nth-child(11) {
+            order: 6;
+          }
+
+          &:nth-child(12) {
+            order: 8;
+          }
+
+          &:nth-child(13) {
+            order: 10;
+          }
+
+          &:nth-child(14) {
+            order: 12;
+          }
+
+          &:nth-child(15) {
+            order: 14;
+          }
+
+          &:nth-child(16) {
+            order: 16;
+          }
+        }
+      }
+    }
+
+    @include media(xl) {
+      grid-column-start: 2;
+      grid-column-end: 6;
+    }
+  }
+
+  &__item-title {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700;
+    min-height: 60px;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    @include media(md) {
+      cursor: auto;
+    }
+  }
+
+  &__item-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 35px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+
+    @include media(md) {
+      max-height: 1000px;
+    }
+
+    &.active {
+      max-height: 1000px;
+    }
+
+    li {
+      a {
+        display: inline-block;
+        font-size: 16px;
+        line-height: 20px;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}

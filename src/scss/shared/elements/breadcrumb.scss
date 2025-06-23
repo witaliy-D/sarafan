@@ -1,0 +1,35 @@
+@use "../../../scss/config/theme" as *;
+
+.breadcrumb {
+  margin: 0;
+  padding: 30px 0 20px;
+  list-style: none;
+
+  li {
+    font-size: 14px;
+    line-height: 17px;
+    color: #6b7073;
+    display: inline;
+
+    a {
+      font-size: 14px;
+      line-height: 17px;
+      color: #c4c4c4;
+      position: relative;
+      padding-right: 5px;
+
+      &:hover {
+        color: #6b7073;
+      }
+
+      &::after {
+        content: ">";
+        display: inline-block;
+        font-size: 14px;
+        line-height: 17px;
+        color: #c4c4c4;
+        margin-left: 9px;
+      }
+    }
+  }
+}

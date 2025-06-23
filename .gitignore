@@ -1,0 +1,11 @@
+.DS_Store
+.idea
+*.ai
+*.log
+*.pdf
+*.psd
+*.sublime*
+node_modules/
+package-lock.json
+Thumbs.db
+faviconData.json

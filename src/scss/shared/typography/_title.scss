@@ -1,0 +1,38 @@
+@use "../../core/mixins/media" as *;
+@use "../../../scss/config/core" as *;
+@use "../../../scss/config/theme" as *;
+
+.title {
+  --dp-block: block;
+  display: var(--dp-block);
+  font-weight: 700;
+  color: #151516;
+  font-family: $font-primary;
+  word-wrap: break-word;
+
+  //* размеры
+  &--size {
+
+    &-md {
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    &-lg {
+      font-size: 27px;
+      line-height: 33px;
+
+      @include media(md) {
+        font-size: 36px;
+        line-height: 45px;
+      }
+
+      @include media(lg) {
+        font-size: 48px;
+        line-height: 59px;
+      }
+    }
+  }
+}
+
+

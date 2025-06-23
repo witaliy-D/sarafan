@@ -1,0 +1,6 @@
+@use "../../scss/core/mixins/media" as *;
+ .mb-30 { margin-bottom: 30px; }
+.mb-24 { margin-bottom: 24px; }
+.delay-300\@md { @include media(md) { animation-delay: 300ms; } }
+.mb-35 { margin-bottom: 35px; }
+.mb-50 { margin-bottom: 50px; }

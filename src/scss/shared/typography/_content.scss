@@ -1,0 +1,35 @@
+.content {
+  P {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  ul {
+    padding-left: 15px;
+
+    li {
+      color: #151516;
+
+      &:not(:last-child) {
+        margin-bottom: 14px;
+      }
+
+      &::marker {
+        color: #cd3b31;
+      }
+    }
+  }
+  // a {
+
+  // }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 30px;
+    color: #151516;
+  }
+}

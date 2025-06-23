@@ -1,0 +1,103 @@
+@use "../../../scss/core/mixins/media" as *;
+@use "../../../scss/config/core" as *;
+@use "../../../scss/config/theme" as *;
+
+.rent-info {
+  @include media(lg) {
+    margin-bottom: 90px;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+
+    @include media(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include media(xl) {
+      grid-template-columns: repeat(12, 1fr);
+      row-gap: 60px;
+    }
+  }
+
+  &__item-advantage {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    align-self: center;
+
+    @include media(xl) {
+      grid-column: span 2;
+    }
+  }
+
+  &__punkt {
+    font-weight: 700;
+
+    p {
+      font-size: 16px;
+      color: #6b7073;
+      margin-bottom: 12px;
+
+      br {
+        @include media(xl, max) {
+          display: none;
+        }
+      }
+    }
+
+    .rent__number {
+      font-size: 30px;
+      line-height: 1;
+      color: #151516;
+
+      @include media(hg) {
+        font-size: 36px;
+      }
+    }
+  }
+
+  &__item {
+    &:nth-child(2) {
+      --adaptive-box: 89.59%;
+
+      @include media(xl) {
+        grid-column: span 4;
+      }
+    }
+
+    &:nth-child(3) {
+      --adaptive-box: 58.93%;
+
+      @include media(xl) {
+        grid-column: span 6;
+      }
+    }
+
+    &:nth-child(4) {
+      --adaptive-box: 86.1%;
+
+      @include media(xl) {
+        grid-column: span 3;
+      }
+    }
+
+    &:nth-child(5) {
+      --adaptive-box: 63.43%;
+
+      @include media(xl) {
+        grid-column: span 4;
+      }
+    }
+
+    &:nth-child(6) {
+      --adaptive-box: 50.14%;
+
+      @include media(xl) {
+        grid-column: span 5;
+      }
+    }
+  }
+}

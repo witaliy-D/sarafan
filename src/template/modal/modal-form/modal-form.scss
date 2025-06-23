@@ -1,0 +1,145 @@
+@use "../../../scss/core/mixins/media" as *;
+@use "../../../scss/config/core" as *;
+@use "../../../scss/config/theme" as *;
+
+.modal-form {
+  transition: all 0.8s ease 0s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 999;
+
+  &__box {
+    margin: auto;
+    position: relative;
+    z-index: 2;
+    transform: perspective(600px) translateY(-120%) rotateX(45deg);
+    transition: all 0.8s ease 0s;
+    background-color: #fff;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+
+    .modal-form__box {
+      transform: perspective(600px) translateY(0%) rotateX(0deg);
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    padding: 70px 16px 40px;
+    display: flex;
+    flex-direction: column;
+
+    @include media(md) {
+      padding: 70px 40px;
+    }
+
+    @include media(hg) {
+      padding: 110px 80px;
+    }
+
+    .form-field {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__info {
+    margin-top: 20px;
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+    max-width: 700px;
+
+    @include media(lg) {
+      font-size: 16px;
+    }
+
+    @include media(hg) {
+      font-size: 20px;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+    svg {
+      flex-shrink: 0;
+
+      @include media(lg) {
+        margin-top: 3px;
+      }
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    margin-top: 40px;
+
+    @include media(lg) {
+      margin-top: 0;
+    }
+  }
+}
+
+.modal-form__close {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  border: none;
+  padding: 0;
+  font-size: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 11;
+  transition: transform 0.3s;
+
+  @include media(md) {
+    top: 30px;
+    right: 30px;
+  }
+
+  @include media(hg) {
+    top: 80px;
+    right: 80px;
+  }
+}
+
+.modal-form__close:hover {
+  transform: rotate(180deg);
+}
+
+.modal-form__close::before,
+.modal-form__close::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 20px;
+  border-radius: 1px;
+  background-color: $color-primary;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+}
+
+.modal-form__close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.modal-form__close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+
+
+

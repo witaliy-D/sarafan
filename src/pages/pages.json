@@ -1,0 +1,13 @@
+{
+  "main": [
+    "intro",
+    "rent",
+    "rent-info"
+  ],
+  "404": [
+    "error"
+  ],
+  "text": [
+    "content"
+  ]
+}

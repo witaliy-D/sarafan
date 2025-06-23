@@ -1,0 +1,37 @@
+//*
+
+//*
+$columns: 12;
+//*
+$grid-gap: (
+    'default': (
+        'gap-x': 16px,
+        'gap-y': 16px,
+        'container-gap': 16px,
+    ),
+    'xs': (
+        //'gap-x': 30px,
+        //'gap-y': 30px,
+        'container-gap': 30px,
+    ),
+    'md': (
+        'gap-x': 30px,
+        'gap-y': 30px,
+        'container-gap': 50px,
+    ),
+    'lg': (
+        //'gap-x': 80px,
+       // 'gap-y': 80px,
+        'container-gap': 80px,
+    )
+);
+
+//* Размеры контайнера (.container)
+$container-max-width: (
+    //'sm': 448px,    //* 480
+    //'xs': 488px,    //* 640
+    //'md': 648px,    //* 768
+    //'lg': 1800px,    //* 1024
+    'hg': 1920px    //* 1280
+);
+

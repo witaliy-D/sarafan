@@ -1,0 +1,19 @@
+@use "../../../scss/core/mixins/media" as *;
+@use "../../../scss/config/core" as *;
+@use "../../../scss/config/theme" as *;
+
+.error {
+
+  &__info {
+    font-size: 20px;
+  }
+
+  &__link {
+    color: currentColor;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+}

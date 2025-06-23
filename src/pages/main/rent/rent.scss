@@ -1,0 +1,88 @@
+@use "../../../scss/core/mixins/media" as *;
+@use "../../../scss/config/core" as *;
+@use "../../../scss/config/theme" as *;
+
+.rent {
+
+  &__items {
+    display: flex;;
+    flex-direction: column;
+    gap: 30px;
+
+    @include media(xl) {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__slider-wrapper {
+    position: relative;
+
+    @include media(xl) {
+      grid-column: span 7;
+      order: -1;
+    }
+  }
+
+  &__content {
+    @include media(xl) {
+      grid-column: span 5;
+    }
+  }
+
+  &__slide-img {
+    --adaptive-box: 50%;
+  }
+
+  &__controls {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .swiper-pagination {
+    position: static;
+    line-height: 0;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: auto;
+  }
+
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 7px;
+  }
+
+  .swiper-pagination-bullet {
+    background: #6B7073;
+    opacity: 0.5;
+    width: 6px;
+    height: 6px;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #6b7073;
+    opacity: 1;
+    width: 9px;
+    height: 9px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: static;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 43px;
+    height: 16px;
+
+    &:after {
+      display: none;
+    }
+  }
+}
+
